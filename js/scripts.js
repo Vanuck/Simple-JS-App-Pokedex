@@ -3,21 +3,25 @@
 
 let pokemonList = [
     {
-        item: 1,
         name: 'Wartortle', 
         height: 1, 
         type: ['water']
     },
     {
-        item: 2,
         name: 'Primeape', 
         height: 1, 
         type: ['fighting']
     },
     {
-        item:3
         name: 'Ekans', 
         height: 2, 
         type: ['poison']
     },
 ];
+
+for (let i = 0; i < pokemonList.length; i++) {
+    if (pokemonList[i].height > 1.5)
+     {document.write(pokemonList[i].name + "  " + "(height:"+ "  " +  pokemonList[i].height + " ) " + "- Wow. That\'s big!"+ "<br>"); //condition for pokemon with the height > 1 
+  } else {
+  document.write(pokemonList[i].name + "  " + "(height:"+ "  " +  pokemonList[i].height + " ) " + "<br>");}
+  }
