@@ -19,9 +19,18 @@ let pokemonList = [
     },
 ];
 
-for (let i = 0; i < pokemonList.length; i++) {
-    if (pokemonList[i].height >1.0)
-     {document.write(pokemonList[i].name + "  " + "(height:" + "  " +  pokemonList[i].height + " ) " + " Wow. That's big!"+ "<br>"); //condition put in for pokemon with the height taller than 1.0 
+pokemonList.forEach(function(user) {
+    if (pokemonList.height >1.0)
+    {document.write(user.name + " " + "(height:" + user.height + ") " + " Wow. That's big!" + "<br>"); //condition put in for pokemon with the height taller than 1.0 
   } else {
-  document.write(pokemonList[i].name + "  " + "(height:"+ "  " +  pokemonList[i].height + " ) " + "<br>");}
+    {document.write(user.name + " " + "(height:" + user.height + ") " +"<br>");}
   }
+
+
+//for (let i = 0; i < pokemonList.length; i++) {
+   // if (pokemonList[i].height >1.0)
+   //  {document.write(pokemonList[i].name + "  " + "(height:" + "  " +  pokemonList[i].height + " ) " + " Wow. That's big!"+ "<br>"); //condition put in for pokemon with the height taller than 1.0 
+ // } else {
+ // document.write(pokemonList[i].name + "  " + "(height:"+ "  " +  pokemonList[i].height + " ) " + "<br>");}
+ // }
+})
