@@ -4,7 +4,7 @@ let pokemonRepository = (function () {
 // Variables
 // Height is in meters
 
-let pokemonList = [
+let repository = [
     {
         name: 'Wartortle', 
         height: 1.0,
@@ -22,12 +22,12 @@ let pokemonList = [
     },
 ];
 
-//IIFE will return objects with these publis functions
+//IIFE will return objects with these public functions
 function getALL() {
-  return pokemonList;
+  return repository;
 }
 
-//   adding pokemon based on the requirements
+//adding pokemon based on the requirements
 function add(pokemon){
   //  checking whether each pokemon is an object and checks keys of the pokemon object are present 
   if(typeof pokemon === 'object' && 
@@ -36,39 +36,46 @@ function add(pokemon){
   //"height" in pokemon
   // "type" in pokemon 
   
-      pokemonList.push(pokemon);
-  }else{
-      console.log("Pokemon is not correct")};
+      repository.push(pokemon);
+  }
+  //else{
+    //  console.log("Pokemon is not correct")};
   }    
   //function add (pokemon) {
   //pokemonList.push(pokemon);
 //}
 
+function addListItem(pokemon){
+  let pokemonList = document.querySelector('.pokemon-list');
+  //li element inside the ul
+  let listpokemon = document.createElement('li');
+  //button element inside the li
+  let button = document.createElement('button');
+  button.innerText = pokemon.name;
+  button.classList.add('button-class');
+  //append button to the li listpokemon as its child
+  listpokemon.appendChild(button);
+  //append the li listpokemon to the ul pokemonList as its child
+  pokemonList.appendChild(listpokemon);
+  //Add Event listener to button with showDetails function
+button.addEventListener('click', function() {
+  showDetails(pokemon);
+});
+}
+
+function showDetails(pokemon){
+  console.log(pokemon);
+}
+
 return {
   add: add,
-  getALL: getALL
+  getALL: getALL,
+  addListItem: addListItem,
+  showDetails: showDetails
 };
 
 })();
+pokemonRepository.getALL().forEach(function (pokemon){
 
-// forEach() loop that iterates over each Pokémon in the repository
-pokemonRepository.getALL().forEach(function (pokemon) {
-    document.write('<p>' + pokemon.name + " " + "(height: " + pokemon.height + ")" + '</p>')
-})
-
-
-
-//pokemonList.forEach(function(user) {
-   // if (pokemonList.height >1.0)
-    //{document.write(user.name + " " + "(height:" + user.height + ") " + " Wow. That's big!" + "<br>"); //condition put in for pokemon with the height taller than 1.0 
- // } else {
- //   {document.write(user.name + " " + "(height:" + user.height + ") " +"<br>");}
-//  }
-
-
-//for (let i = 0; i < pokemonList.length; i++) {
-   // if (pokemonList[i].height >1.0)
-   //  {document.write(pokemonList[i].name + "  " + "(height:" + "  " +  pokemonList[i].height + " ) " + " Wow. That's big!"+ "<br>"); //condition put in for pokemon with the height taller than 1.0 
- // } else {
- // document.write(pokemonList[i].name + "  " + "(height:"+ "  " +  pokemonList[i].height + " ) " + "<br>");}
- //}
+  pokemonRepository.addListItem(pokemon);
+});
