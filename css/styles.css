@@ -1,31 +1,44 @@
 body {
     display: flex;
     justify-content: center;
-    background-color: #e96a6a;
+    background-color: #950808;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     text-align: center;
     margin-top: 35px;
     padding: 10px;
-    font-size:4vw;
+    font-size: 20px;
     line-height: 1.0;
     color: #070808;
   }
 
   nav {
     margin-bottom: 30px;
-    background-image: linear-gradient(#cee236,#36bae2);
+    background-image: linear-gradient(#cee236,#54e85e);
     border-radius: 10px;
   }
-  
+  .navbar-brand{
+    background-color:yellow;
+    font-size:50px;
+    font-family: roboto;
+    font-style:italic;
+    font-weight:bold;
+    color:rgb(64, 17, 233);
+    text-shadow: 2px 2px 8px #FF0000;
+  }
   .logo-img {
     max-width: 40%;
     margin: 0 auto;
   }
 
   h1 {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
+  }
+
+  p {
+    font-size: 18px;
+    font-weight: 400;
   }
   
   .pokemon-list {
@@ -38,7 +51,7 @@ body {
   .button-class {
     background-color: rgb(254, 254, 254);
     border: none;
-    color: rgb(31, 8, 8);
+    color: rgb(12, 26, 122);
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -54,9 +67,9 @@ body {
     justify-content: center;
     width: 170px;
     transform: skew(-30deg);
-    background-color: rgb(48, 13, 13);
+    background-color: rgb(34, 5, 250);
     color: rgb(246, 242, 242);
-    border: 3px solid rgb(11, 11, 140);
+    border: 3px solid rgb(207, 17, 33);
     overflow: hidden;
 }
 .container-flexbox {
@@ -64,6 +77,65 @@ body {
   justify-content: space-between; 
   flex-wrap: wrap; 
 }
+
+.modal-container {
+  display: none;
+}
+
+.modal-container.is-visible {
+
+  position: absolute;
+  padding: 20px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:transparent;
+
+  /* to show it above other content */
+  z-index: 999;
+
+  /* to allow scrolling if the screen is not high enough*/
+  overflow: auto;
+
+  /* this is used to center the modal */
+  display: grid;
+  text-align: center;
+}
+
+.modal {
+  margin: auto;
+  display: inline-block;
+  box-sizing: border-box;
+  background: #fff;
+  padding: 15px;
+  width: 40%;
+  height: 28%;
+  max-width: 300px;
+  text-align: left;
+  background-color: #6bb2e4;
+  position: absolute;
+  inset: 20px;
+}
+
+.modal-close {
+  display: flex;
+  justify-content: left;
+  border: 0;
+  background: none;
+  color: #696868;
+  text-decoration: underline;
+}
+
+.modal h1 {
+  margin-top: 0;
+}
+
+.modal p {
+  margin-bottom: 0;
+}
+
 /* Desktops */
 @media (min-width:768px) { .container-block { padding: 4% 8% } }
 
