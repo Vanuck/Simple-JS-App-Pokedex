@@ -1,0 +1,86 @@
+.navbar {
+  background-color: #1b0cee;
+}
+body {
+  background-color: #292e89;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  margin-top: 30px;
+  min-height: 100vh;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1;
+  color: #e1f1f1;
+  background-image: linear-gradient(#07a2a2, #0928d7);
+}
+.logo-img {
+  max-width: 40%;
+  margin: 0 auto;
+}
+.container {
+  margin-top: 5rem;
+}
+h1 {
+  margin-bottom: 2rem;
+  font-size: 20px;
+  font-weight: 700;
+}
+p {
+  font-size: 18px;
+  font-weight: 400;
+}
+.list-group-item {
+  background-color: #b9b00d;
+  background-image: linear-gradient(#cee236, #a5d201);
+  border-radius: 10px;
+}
+.button-class {
+  background-color: rgb(254, 254, 254);
+  background-image: linear-gradient(#0d0e0a, #0d92f0);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  transition: 0.2s ease-in-out;
+  font-weight: 700;
+  margin: 3px 2px;
+  transition-duration: 0.6s;
+  cursor: crosshair;
+  display: flex;
+  width: 170px;
+  transform: skew(-30deg);
+  color: rgb(238, 238, 10);
+}
+.button-class:hover,
+.button-class:focus {
+  text-align: center;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.button-class:active,
+.button-class:active {
+  text-align: center;
+  background-color: #f9e1e1;
+  border: 5px solid #705a15;
+  color: #000;
+  text-transform: uppercase;
+}
+.modal {
+  color: #000;
+}
+.modal-dialog {
+  margin-top: 10%;
+}
+.modal-img {
+  margin-top: -15px;
+  width: 50%;
+}
+@media (min-width: 768px) {
+  .container-block {
+    padding: 4% 8%;
+  }
+}
+@media all and (max-width: 768px) {
+  .button-class {
+    padding-top: 26px;
+    padding-bottom: 26px;
+  }
+}
