@@ -87,8 +87,7 @@ p {
   padding: 20px;
 }
 
-/* Desktops */
-/* @media (min-width:768px) { .container-block { padding: 4% 8% } } */
+@media (min-width:768px) { .container-block { padding: 4% 8% } }
 
 @media all and (max-width: 768px) {
   .button-class {
