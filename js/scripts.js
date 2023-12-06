@@ -55,7 +55,7 @@ function loadList() {
 }
 
 function loadDetails(item) {
-  let url = item.detailsUrl;
+  let url = item.details;
   return fetch(url).then(function (response) {
       return response.json();
   }).then(function (details) {
@@ -68,7 +68,7 @@ function loadDetails(item) {
 }
 
 function showDetails(item){
-  pokemonRepository.loadDetails(item).then(function () {
+  loadDetails(item).then(function () {
       showModal(item);
   });
 }
@@ -80,17 +80,25 @@ function showModal(item) {
   let modalHeader = $('.modal-header');
 
   //modal Clear
-  modalTitle.innerHTML = '';
-  modalBody.innerHTML = '';
+  modalTitle.empty();
+  modalBody.empty();
 
   //name in modal content
   let nameElement = $('<h1>' + item.name + '<h1>');
+  nameElement.innerText = item.name;
+  modalTitle.append(nameElement);
+
   //img in modal content
-  let imageElement = $('<img class="modal-img"  style="width:50%">')
-  imageElement.attr("src", item.imageUrl);
+  let image = $('<img class="img" style= width:33%>');
+    image.attr('src', item.imageUrl);
+   modalBody.append(image);
+
   //height in modal content
   let heightElement = $('<p>' + "height : " + item.height + "</p>");
+  heightElement.innerText = 'height: ' + item.height;
+  modalBody.append(heightElement);
   //type in modal content
+
   function typeCount(item) {
       if(item.types.length === 2) {
           return item.types[0].type.name + ', ' + item.types[1].type.name;
@@ -98,14 +106,10 @@ function showModal(item) {
           return item.types[0].type.name;
       }
   }
-  let typeElement = $('<p>' + "types : " + item.types + "<p>");
-  
+  let typeElement = document.createElement('p');
+        typeElement.innerText = 'type: ' + typeCount(item);
+  modalBody.append(typeElement);
 
-  //Add new modal content
-  modalTitle.appendChild(nameElement);
-  modalBody.appendChild(imageElement);
-  modalBody.appendChild(heightElement);
-  modalBody.appendChild(typeElement);
 }    
 
 return {
