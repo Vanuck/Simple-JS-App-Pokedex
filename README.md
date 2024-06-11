@@ -5,7 +5,9 @@ Pokedex A Simple JS App
 
 # Description:
 
-    This is a small application that fetches data about the Pokemon from an external API, displays details of a Pokemon when you click or select on that name. Also built in search function for your specific Pokemon you may be looking for.
+This is a small application that fetches data about the Pokemon from an external API.
+It displays details of a Pokemon when you click or select on that name.
+Also a built in search function for your specific Pokemon you may be looking for is available.
 
 # API for the application
 
